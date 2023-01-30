@@ -15,6 +15,13 @@ const Item = styled(Paper)(({ theme }) => ({
 
 export default function Home() {
   const [tech, setTech] = useState('Blockchain');
+  const [topList, setTopList] = useState([
+    { title: 'BTC', price: '$30,213', ratio: '+1.37%' },
+    { title: 'ETH', price: '$10,213', ratio: '+2.17%' },
+    { title: 'LUNA', price: '$1,213', ratio: '+1.31%' },
+    { title: 'GALA', price: '$2,213', ratio: '+0.31%' },
+    { title: 'BNB', price: '$301', ratio: '+2.37%' }
+  ])
 
   const handleChange = (event: SelectChangeEvent) => {
     setTech(event.target.value as string);
@@ -40,14 +47,24 @@ export default function Home() {
           </Item>
         </Grid>
         <Grid item xs={6}>
-          <Item elevation={0}>xs=8</Item>
+          <Item elevation={0} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            {
+              topList.map((value, index) => (
+                <div key={index} className={`${styles.centerItemStyle} ${index !== 0 && 'border-white border-l-[1px]'}`}>
+                  <p>{value.title}</p>
+                  <p>{value.price}</p>
+                  <p>{value.ratio}</p>
+                </div>
+              ))
+            }
+          </Item>
         </Grid>
         <Grid item xs={3}>
           <Item elevation={0} style={{ display: 'flex', alignItems: 'center', justifyContent: 'end' }}>
             <FormControl sx={{ m: 1, width: 220, }}>
               <Select
-                labelId="demo-simple-select-label"
-                id="demo-simple-select"
+                labelId="simple-select-label"
+                id="simple-select"
                 value={tech}
                 onChange={handleChange}
                 autoWidth
