@@ -15,13 +15,13 @@ const Item = styled(Paper)(({ theme }) => ({
 
 export default function Home() {
   const [tech, setTech] = useState('Blockchain');
-  const [topList, setTopList] = useState([
+  const topList = [
     { title: 'BTC', price: '$30,213', ratio: '+1.37%' },
     { title: 'ETH', price: '$10,213', ratio: '+2.17%' },
     { title: 'LUNA', price: '$1,213', ratio: '+1.31%' },
     { title: 'GALA', price: '$2,213', ratio: '+0.31%' },
     { title: 'BNB', price: '$301', ratio: '+2.37%' }
-  ])
+  ]
 
   const handleChange = (event: SelectChangeEvent) => {
     setTech(event.target.value as string);
