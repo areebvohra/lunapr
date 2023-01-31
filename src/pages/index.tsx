@@ -98,7 +98,7 @@ export default function Home() {
                 </div>
               </div>
               <div>
-                <h1 className='text-7xl'>{mainTitle}</h1>
+                <h1 className='text-7xl font-extrabold'>{mainTitle}</h1>
               </div>
               <div>
                 <p>{mainText}</p>
