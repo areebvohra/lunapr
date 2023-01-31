@@ -4,6 +4,7 @@ import Image from 'next/image'
 import styles from '@/styles/Home.module.css'
 import { styled } from '@mui/material/styles';
 import { Paper, Grid, MenuItem, Select, SelectChangeEvent, FormControl } from '@mui/material';
+import data from '../../data.json';
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: '#171525',
@@ -22,6 +23,8 @@ export default function Home() {
     { title: 'GALA', price: '$2,213', ratio: '+0.31%' },
     { title: 'BNB', price: '$301', ratio: '+2.37%' }
   ]
+
+  const { mainTitle, mainText, mainData, mainLocation, mainCategory } = data;
 
   const handleChange = (event: SelectChangeEvent) => {
     setTech(event.target.value as string);
@@ -79,7 +82,30 @@ export default function Home() {
       </Grid>
       <main className={styles.main}>
         <div className={styles.center}>
-
+          <div className='flex justify-between'>
+            <div className='flex flex-col justify-center pl-16 pr-10' style={{ width: '50%' }}>
+              <div className='flex justify-between' style={{ width: '55%', alignItems: 'center' }}>
+                <div className='px-8 py-4 rounded-full' style={{ backgroundColor: '#F3F3F3' }}>
+                  <span className='text-xl font-semibold'>{mainCategory}</span>
+                </div>
+                <div className='flex'>
+                  <img src={'/location.png'} style={{ width: 22 }} />
+                  <span className='pl-2'>{mainLocation}</span>
+                </div>
+                <div className='flex'>
+                  <img src={'/calender.png'} style={{ width: 22 }} />
+                  <span className='pl-2'>{mainData}</span>
+                </div>
+              </div>
+              <div>
+                <h1 className='text-7xl'>{mainTitle}</h1>
+              </div>
+              <div>
+                <p>{mainText}</p>
+              </div>
+            </div>
+            <img src={'/storyImage.png'} style={{ width: '50%' }} />
+          </div>
         </div>
       </main>
     </>
