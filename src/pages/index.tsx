@@ -24,6 +24,12 @@ export default function Home() {
     { title: 'BNB', price: '$301', ratio: '+2.37%' }
   ]
 
+  const storyList = [
+    { source: '/title1.png', title: 'Title of the Story will go here...', date: '2 - 3 June 2022' },
+    { source: '/title2.png', title: 'Title of the Story will go here...', date: '2 - 3 June 2022' },
+    { source: '/title3.png', title: 'Title of the Story will go here...', date: '2 - 3 June 2022' }
+  ]
+
   const { mainTitle, mainText, mainData, mainLocation, mainCategory } = data;
 
   const handleChange = (event: SelectChangeEvent) => {
@@ -89,11 +95,11 @@ export default function Home() {
                   <span className='text-xl font-semibold'>{mainCategory}</span>
                 </div>
                 <div className='flex'>
-                  <img src={'/location.png'} style={{ width: 22 }} />
+                  <img src={'/location.png'} style={{ width: 22, height: 22 }} />
                   <span className='pl-2'>{mainLocation}</span>
                 </div>
                 <div className='flex'>
-                  <img src={'/calender.png'} style={{ width: 22 }} />
+                  <img src={'/calender.png'} style={{ width: 22, height: 22 }} />
                   <span className='pl-2'>{mainData}</span>
                 </div>
               </div>
@@ -105,6 +111,24 @@ export default function Home() {
               </div>
             </div>
             <img src={'/storyImage.png'} style={{ width: '50%' }} />
+          </div>
+          <div className='flex justify-end'>
+            <div style={{ backgroundColor: "#F3F3F3", height: 200, width: '60%', borderTopLeftRadius: 10, borderBottomLeftRadius: 10 }}>
+              <div className={styles.container}>
+                {storyList.map((value, index) => (
+                  <div className='flex flex-row' key={index}>
+                    <div className={styles.card} style={{ backgroundImage: `url(${value.source})` }} />
+                    <div className='px-6 flex flex-col justify-center' style={{ width: 200 }}>
+                      <span className='font-medium'>{value.title}</span>
+                      <div className='flex items-center pt-4'>
+                        <img src={'/calender.png'} style={{ width: 20, height: 20 }} />
+                        <span className='pl-2 text-xs'>{value.date}</span>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </main>

@@ -4,6 +4,7 @@
   justify-content: space-between;
   align-items: center;
   min-height: 100vh;
+  padding-bottom: 20vh;
 }
 
 .header {
@@ -43,16 +44,25 @@
   position: relative;
 }
 
-/* Enable hover only on non-touch devices */
-@media (hover: hover) and (pointer: fine) {
-  .card:hover {
-    background: rgba(var(--card-rgb), 0.1);
-    border: 1px solid rgba(var(--card-border-rgb), 0.15);
-  }
+/* ::-webkit-scrollbar {
+  width: 0px;
+} */
 
-  .card:hover span {
-    transform: translateX(4px);
-  }
+.container {
+  display: flex;
+  overflow-x: scroll;
+  width: 100%;
+  padding: 15px;
+}
+
+.card {
+  flex-shrink: 0;
+  width: 230px;
+  height: 160px;
+  border-radius: 8px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
 /* Mobile */
