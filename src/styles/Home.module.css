@@ -57,8 +57,6 @@
 
 .card {
   flex-shrink: 0;
-  width: 230px;
-  height: 160px;
   border-radius: 8px;
   background-size: cover;
   background-repeat: no-repeat;

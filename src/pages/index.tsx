@@ -16,7 +16,7 @@ const Item = styled(Paper)(({ theme }) => ({
 
 export default function Home() {
   const [tech, setTech] = useState('Blockchain');
-  const { mainTitle, mainText, mainData, mainLocation, mainCategory, topList, storyList } = data;
+  const { mainTitle, mainText, mainData, mainLocation, mainCategory, topList, storyList, featureStory, featureText, featureList } = data;
 
   const handleChange = (event: SelectChangeEvent) => {
     setTech(event.target.value as string);
@@ -103,12 +103,57 @@ export default function Home() {
               <div className={styles.container}>
                 {storyList.map((value, index) => (
                   <div className='flex flex-row' key={index}>
-                    <div className={styles.card} style={{ backgroundImage: `url(${value.source})` }} />
+                    <div className={styles.card} style={{ backgroundImage: `url(${value.source})`, width: 230, height: 160 }} />
                     <div className='px-6 flex flex-col justify-center' style={{ width: 200 }}>
                       <span className='font-medium'>{value.title}</span>
                       <div className='flex items-center pt-4'>
                         <img src={'/calender.png'} style={{ width: 20, height: 20 }} />
                         <span className='pl-2 text-xs'>{value.date}</span>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+          <div className='flex justify-between pl-16 pt-14'>
+            <div className='flex px-10 flex-col justify-center' style={{ width: '42%' }}>
+              <div>
+                <h1 className='text-4xl font-extrabold'>{featureStory}</h1>
+              </div>
+              <div className='py-4'>
+                <p>{featureText}</p>
+              </div>
+              <div>
+                <button>
+                  <img src='/arrowLeft.png' style={{ width: 50, height: 50 }} />
+                </button>
+                <button className='pl-1'>
+                  <img src='/arrowRight.png' style={{ width: 50, height: 50 }} />
+                </button>
+              </div>
+            </div>
+            <div style={{ width: '58%' }}>
+              <div className={styles.container}>
+                {featureList.map((value, index) => (
+                  <div key={index} className='mr-4 shadow-xl' style={{ borderRadius: 8 }}>
+                    <div className={styles.card} style={{ backgroundImage: `url(${value.source})`, width: 380, height: 320, borderBottomLeftRadius: 0, borderBottomRightRadius: 0 }} />
+                    <div className='py-4 pl-3 pr-5'>
+                      <div>
+                        <span className='text-2xl font-medium'>{value.title}</span>
+                      </div>
+                      <div className='flex py-5'>
+                        <div className='flex items-center'>
+                          <img src={'/location.png'} style={{ width: 18, height: 18 }} />
+                          <span className='pl-2 text-xs'>{value.location}</span>
+                        </div>
+                        <div className='flex items-center pl-4'>
+                          <img src={'/calender.png'} style={{ width: 18, height: 18 }} />
+                          <span className='pl-2 text-xs'>{value.date}</span>
+                        </div>
+                      </div>
+                      <div>
+                        <p>{value.text}</p>
                       </div>
                     </div>
                   </div>

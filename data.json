@@ -47,5 +47,30 @@
             "title": "Title of the Story will go here...",
             "date": "2 - 3 June 2022"
         }
+    ],
+    "featureStory": "FEATURED STORIES ON LUNA TIMES",
+    "featureText": "Cursus fames vel donec amet. Varius ultrices ac malesuada lacinia proin. Lectus malesuada tempus neque nibh.",
+    "featureList": [
+        {
+            "title": "Title of the Story will go here...",
+            "source": "/feature1.png",
+            "location": "Dubai, UAE",
+            "date": "2 - 3 June 2022",
+            "text": "Cursus fames vel donec amet. Varius ultrices ac malesuada lacinia proin. Lectus malesua..."
+        },
+        {
+            "title": "Title of the Story will go here...",
+            "source": "/feature2.png",
+            "location": "Dubai, UAE",
+            "date": "2 - 3 June 2022",
+            "text": "Cursus fames vel donec amet. Varius ultrices ac malesuada lacinia proin. Lectus malesua..."
+        },
+        {
+            "title": "Title of the Story will go here...",
+            "source": "/feature3.png",
+            "location": "Dubai, UAE",
+            "date": "2 - 3 June 2022",
+            "text": "Cursus fames vel donec amet. Varius ultrices ac malesuada lacinia proin. Lectus malesua..."
+        }
     ]
 }
